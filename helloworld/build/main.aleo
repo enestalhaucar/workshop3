@@ -1,4 +1,4 @@
-program enestalhaucar123123.aleo;
+program turanozgur123.aleo;
 
 function main:
     input r0 as u32.public;

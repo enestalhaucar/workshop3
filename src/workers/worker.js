@@ -18,7 +18,7 @@ async function localProgramExecution(program, aleoFunction, inputs) {
   const account = new Account();
   programManager.setAccount(account);
 
-  const executionResponse = await programManager.executeOffline(
+  const executionResponse = await programManager.run(
     program,
     aleoFunction,
     inputs,
@@ -41,14 +41,14 @@ async function deployProgram(program) {
 
   // Use existing account with funds
   const account = new Account({
-    privateKey: "APrivateKey1zkpEMH2DH7m8y9bkqmZBMApu3ZdcNufmefwYGKVkBks7JMq",
+    privateKey: "APrivateKey1zkp4mn22br2DMTcw1jyUVqHK1MmNmHqPNh7Er6G47vWwTcC",
   });
 
   const recordProvider = new NetworkRecordProvider(account, networkClient);
 
   // Initialize a program manager to talk to the Aleo network with the configured key and record providers
   const programManager = new ProgramManager(
-    "https://vm.aleo.org/api",
+    "https://api.explorer.aleo.org/v1",
     keyProvider,
     recordProvider,
   );
